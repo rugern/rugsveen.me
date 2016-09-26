@@ -1,0 +1,24 @@
+{
+    "parser": "babel-eslint",
+    "extends": "airbnb-base",
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "indent": ["error", 4],
+        "no-param-reassign": 0,
+        "new-cap": [2, {
+            "capIsNew": false,
+            "newIsCap": false,
+        }],
+        "func-names": 0,
+
+        # React rules here:
+        "react/jsx-uses-react": 1,
+        "react/react-in-jsx-scope": 1,
+        "react/jsx-uses-vars": 1,
+    },
+    "globals": {
+        "document": true
+    }
+}
