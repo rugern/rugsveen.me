@@ -6,7 +6,8 @@ var webpack = require("webpack");
 module.exports = {
   entry: [
     "babel-polyfill",
-    "./index"
+    "./index",
+    "./style/index.css",
   ],
   output: {
     path: path.join(__dirname, "dist"),

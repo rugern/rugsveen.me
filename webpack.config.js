@@ -8,7 +8,8 @@ module.exports = {
   entry: [
     "webpack-hot-middleware/client",
     "babel-polyfill",
-    "./index"
+    "./index",
+    "./style/index.css",
   ],
   output: {
     path: path.join(__dirname, "dist"),
