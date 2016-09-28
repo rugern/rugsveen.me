@@ -1,0 +1,13 @@
+const a: {[key: string]: string} = {};
+a.b = 'hello';
+a.c = 'world';
+a.d = 3; // Fails, wrong type
+
+let b: 'Amedia';
+b = 'Amedia';
+b = 'Aftenposten'; // Fails, wrong type
+
+let c: ?string = 'flow';
+c = undefined;
+c = 'something';
+c = 3; // Fails

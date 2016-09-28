@@ -1,0 +1,11 @@
+let a: Array<string>;
+a = ['hello'];
+a.push(1); // Fails
+
+let b: Function;
+b = function() {...};
+
+let c: Object;
+c = {
+    /* Any number of properties and types */
+};

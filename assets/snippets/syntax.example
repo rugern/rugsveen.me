@@ -1,0 +1,3 @@
+const a: string = 'Hello world';
+const b = 'My type is inferred';
+b = 3; // Fails! Wrong type
