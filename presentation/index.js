@@ -1,10 +1,11 @@
 import React from 'react';
 import {
     Appear,
-    Code,
-    CodePane,
     Deck,
+    Fill,
     Heading,
+    Image,
+    Layout,
     Link,
     ListItem,
     List,
@@ -12,159 +13,137 @@ import {
     Spectacle,
     Text,
 } from 'spectacle';
-import CodeSlide from 'spectacle-code-slide';
 import preloader from 'spectacle/lib/utils/preloader';
 import createTheme from 'spectacle/lib/themes/default';
 import 'normalize.css';
 import 'spectacle/lib/themes/default/index.css';
 
+const images = {
+    kitty: require('../assets/images/kitty.jpg'),
+    birthday: require('../assets/images/birthday.jpg'),
+    christine: require('../assets/images/christine.jpg'),
+    mountain: require('../assets/images/mountain.jpg'),
+    waterfall: require('../assets/images/waterfall.jpg'),
+    askoy: require('../assets/images/askoy.jpg'),
+};
+
+preloader(images);
 
 const theme = createTheme({
-    primary: '#1FBCD2',
+    primary: '#6A266F',
     secondary: '#FFFFFF',
 }, {
     primary: 'noyh',
     secondary: 'planer',
 });
 
-const images = {
-};
-preloader(images);
-
 
 export default class Presentation extends React.Component {
     render() {
         return (
             <Spectacle theme={theme}>
-                <Deck transition={['zoom', 'slide']} transitionDuration={500}>
-                    <Slide transition={['zoom']}>
-                        <Heading>Flow</Heading>
-                        <Text>Give JS static types</Text>
-                    </Slide>
+                <Deck transition={['slide']} transitionDuration={500}>
                     <Slide>
-                        <Heading>Some syntax</Heading>
-                        <CodePane lang="js" source={require('raw!../assets/snippets/syntax.example')}/>
-                    </Slide>
-                    <Slide>
-                        <Heading>Primitives</Heading>
-                        <List>
-                            <Appear>
-                                <ListItem>boolean</ListItem>
-                            </Appear>
-                            <Appear>
-                                <ListItem>number</ListItem>
-                            </Appear>
-                            <Appear>
-                                <ListItem>string</ListItem>
-                            </Appear>
-                            <Appear>
-                                <ListItem>null</ListItem>
-                            </Appear>
-                            <Appear>
-                                <ListItem>void</ListItem>
-                            </Appear>
-                            <Appear>
-                                <ListItem>any</ListItem>
-                            </Appear>
-                            <Appear>
-                                <ListItem>mixed</ListItem>
-                            </Appear>
-                            <Appear>
-                                <ListItem>(object literals)</ListItem>
-                            </Appear>
-                        </List>
-                    </Slide>
-                    <CodeSlide transition={[]} lang='js' code={require('raw!../assets/snippets/primitives.example')} ranges={[
-                        { loc: [0, 1], title: 'A string' },
-                        { loc: [0, 2], title: 'Still a string' },
-                        { loc: [0, 3], title: 'Shit' },
-
-                        { loc: [4, 5], title: 'Accepts anything' },
-                        { loc: [4, 6] },
-                        { loc: [4, 7] },
-                        { loc: [4, 8] },
-
-                        { loc: [9, 13], title: 'Let us define an object' },
-                        { loc: [9, 14], title: 'So far, so good' },
-                        { loc: [9, 15], title: 'Nope' },
-                        { loc: [9, 16], title: 'Naww' },
-                    ]}/>
-                    <Slide>
-                        <Heading>Built-in types</Heading>
-                        <List>
-                            <Appear>
-                                <ListItem>Array</ListItem>
-                            </Appear>
-                            <Appear>
-                                <ListItem>Object</ListItem>
-                            </Appear>
-                            <Appear>
-                                <ListItem>Function</ListItem>
-                            </Appear>
-                        </List>
-                    </Slide>
-                    <CodeSlide transition={[]} lang='js' code={require('raw!../assets/snippets/builtin.example')} ranges={[
-                        { loc: [0, 1], title: 'Arrays contain types as well' },
-                        { loc: [0, 2] },
-                        { loc: [0, 3] },
-
-                        { loc: [4, 5], title: 'Built-in function type' },
-                        { loc: [4, 6] },
-
-                        { loc: [7, 8], title: 'Built-in object type' },
-                        { loc: [7, 11] },
-                    ]}/>
-                    <Slide>
-                        <Heading>Other types</Heading>
-                        <List>
-                            <Appear>
-                                <ListItem>(Maps)</ListItem>
-                            </Appear>
-                            <Appear>
-                                <ListItem>Literal types (basically enums)</ListItem>
-                            </Appear>
-                            <Appear>
-                                <ListItem>? (maybe type)</ListItem>
-                            </Appear>
-                        </List>
-                    </Slide>
-                    <CodeSlide transition={[]} lang='js' code={require('raw!../assets/snippets/other.example')} ranges={[
-                        { loc: [0, 1], title: 'Key-value map' },
-                        { loc: [0, 2] },
-                        { loc: [0, 3] },
-                        { loc: [0, 4] },
-
-                        { loc: [5, 6], title: 'b has the type "Amedia"?!?!' },
-                        { loc: [5, 7], title: 'Accepts only one value' },
-                        { loc: [5, 8] },
-
-                        { loc: [9, 10], title: 'Maybe type can be a value' },
-                        { loc: [9, 11], title: 'or nothing' },
-                        { loc: [9, 12] },
-                        { loc: [9, 13], title: 'but not wrong type' },
-                    ]}/>
-                    <Slide>
-                        <Heading>Type aliases</Heading>
-                        <Text>While it is possible to say:</Text>
-                        <Code>const myVar: string | number = otherVar</Code>
-                        <Text>this quickly becomes unruly.</Text>
+                        <Heading>Gratulerer med dagen!!</Heading>
                         <Appear>
-                            <Heading size={4}>That is why aliases are so useful!</Heading>
+                            <Heading size={3}>Pusen min</Heading>
+                        </Appear>
+                        <Appear>
+                            <Image src={images.kitty} height="500px"/>
                         </Appear>
                     </Slide>
-                    <CodeSlide transition={[]} lang='js' code={require('raw!../assets/snippets/aliases.example')} ranges={[
-                        { loc: [0, 1], title: 'Union of types' },
-                        { loc: [2, 7], title: 'or other more specific types' },
-                        { loc: [0, 9], title: 'Lets get crazy' },
-                    ]}/>
-                    <CodeSlide transition={[]} lang='js' code={require('raw!../assets/snippets/functions.example')} ranges={[
-                        { loc: [0, 2], title: 'Type everythaaing!' },
-                    ]}/>
+
                     <Slide>
-                        <Link href='https://github.com/facebook/flow/tree/master/lib' target='_blank'>"Third-party types"</Link>
+                        <Heading>Ooops, her er riktig pus</Heading>
+                        <Image src={images.christine} height="500px"/>
                     </Slide>
+
                     <Slide>
-                        <Heading>Conclusion?</Heading>
+                        <Heading>Vi har gjort mye gøy det siste året</Heading>
+                        <List>
+                            <Appear>
+                                <ListItem>
+                                     Feiret mange begivenheter sammen
+                                     (nyttår, 17. mai, 30-årsdagen din...)
+                                </ListItem>
+                            </Appear>
+                            <Appear>
+                                <ListItem>Vært på sightseeing i Norge</ListItem>
+                            </Appear>
+                            <Appear>
+                                <ListItem>Inkludert Bjåen og Tuddal</ListItem>
+                            </Appear>
+                            <Appear>
+                                <ListItem>Kjøpt leilighet</ListItem>
+                            </Appear>
+                            <Appear>
+                                <ListItem>Og masse mer!</ListItem>
+                            </Appear>
+                        </List>
+                    </Slide>
+
+                    <Slide>
+                        <Image src={images.askoy} height="500px"/>
+                    </Slide>
+
+                    <Slide>
+                        <Image src={images.waterfall} height="500px"/>
+                    </Slide>
+
+                    <Slide>
+                        <Image src={images.mountain} height="500px" transform="rotate(-90deg)"/>
+                    </Slide>
+
+                    <Slide>
+                        <Image src={images.birthday} height="500px"/>
+                    </Slide>
+
+                    <Slide>
+                        <Heading>
+                            Og enda vi har hatt det bra skal det neste året bli
+                            enda bedre!
+                        </Heading>
+                    </Slide>
+
+                    <Slide>
+                        <Heading>Men først skal du løse en gåte:</Heading>
+                        <Appear>
+                            <Text>Under bakken bak lås og slå finner du noe du har ventet på</Text>
+                        </Appear>
+                    </Slide>
+
+                    <Slide>
+                        <Heading>Neste gåte:</Heading>
+                        <Appear>
+                            <Text>
+                                Høyt under taket hvor det er vanskelig å kikke,
+                                i det grå finner du noe du kan drikke
+                            </Text>
+                        </Appear>
+                    </Slide>
+
+                    <Slide>
+                        <Heading>Siste gåte:</Heading>
+                        <Appear>
+                            <Text>
+                                Den gir noe vi kan gjøre sammen, men finnes bare
+                                i det virtuelle. Går du litt videre skal jeg fortelle
+                            </Text>
+                        </Appear>
+                    </Slide>
+
+                    <Slide>
+                        <Link href="assets/billetter.pdf" target="_blank">Klikk her</Link>
+                    </Slide>
+
+                    <Slide>
+                        <Heading size={4}>
+                            Denne dagen handler om deg, og jeg skal gjøre mitt
+                            beste for å gjøre den så bra som mulig!
+                        </Heading>
+                        <Appear>
+                            <Heading>Gratulerer med dagen, elsker deg</Heading>
+                        </Appear>
                     </Slide>
                 </Deck>
             </Spectacle>
