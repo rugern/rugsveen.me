@@ -1,9 +1,0 @@
-type MyType = string | number | boolean;
-
-type MyOtherType = {
-    firstname: string,
-    lastname: string,
-    age: number,
-};
-
-type SuperType = MyType | MyOtherType;
