@@ -12,14 +12,8 @@
             "newIsCap": false,
         }],
         "func-names": 0,
-        "class-methods-use-this": "off",
-
-        # React rules here:
-        "react/jsx-uses-react": 1,
-        "react/react-in-jsx-scope": 1,
-        "react/jsx-uses-vars": 1,
     },
     "globals": {
-        "document": true
+        "document": false,
     }
 }
