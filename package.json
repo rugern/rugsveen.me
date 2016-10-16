@@ -11,7 +11,7 @@
   "license": "MIT",
   "scripts": {
     "serve": "http-server -p 3000 .",
-    "build": "webpack-dev-server --hot --progress --colors --inline --display-error-details",
+    "build:development": "webpack-dev-server --hot --progress --colors --inline --display-error-details",
     "lint": "eslint --fix --ext .js,.jsx ."
   },
   "devDependencies": {
@@ -29,6 +29,7 @@
     "jsx-loader": "^0.13.2",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-router": "^2.8.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
   }
