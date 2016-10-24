@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory } from 'react-router';
 
 import App from './components/App.jsx';
-import Test from './components/Test.jsx';
+import Test from './components/presentations/test';
 
 ReactDOM.render(
     <Router history={hashHistory}>
