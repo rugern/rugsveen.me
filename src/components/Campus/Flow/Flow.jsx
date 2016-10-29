@@ -1,4 +1,5 @@
 import React from 'react';
+import path from 'path';
 import {
     Appear,
     Code,
@@ -31,6 +32,15 @@ const images = {
 };
 preloader(images);
 
+const snippets = {
+    primitives: require('raw!../../../../assets/snippets/flow/primitives.example'),
+    syntax: require('raw!../../../../assets/snippets/flow/syntax.example'),
+    builtin: require('raw!../../../../assets/snippets/flow/builtin.example'),
+    other: require('raw!../../../../assets/snippets/flow/other.example'),
+    aliases: require('raw!../../../../assets/snippets/flow/aliases.example'),
+    functions: require('raw!../../../../assets/snippets/flow/functions.example'),
+};
+
 
 export default class Presentation extends React.Component {
     render() {
@@ -43,7 +53,7 @@ export default class Presentation extends React.Component {
                     </Slide>
                     <Slide>
                         <Heading>Some syntax</Heading>
-                        <CodePane lang="js" source={require('raw!../assets/snippets/syntax.example')}/>
+                        <CodePane lang="js" source={snippets.syntax}/>
                     </Slide>
                     <Slide>
                         <Heading>Primitives</Heading>
@@ -74,7 +84,7 @@ export default class Presentation extends React.Component {
                             </Appear>
                         </List>
                     </Slide>
-                    <CodeSlide transition={[]} lang='js' code={require('raw!../assets/snippets/primitives.example')} ranges={[
+                    <CodeSlide transition={[]} lang='js' code={snippets.primitives} ranges={[
                         { loc: [0, 1], title: 'A string' },
                         { loc: [0, 2], title: 'Still a string' },
                         { loc: [0, 3], title: 'Shit' },
@@ -103,7 +113,7 @@ export default class Presentation extends React.Component {
                             </Appear>
                         </List>
                     </Slide>
-                    <CodeSlide transition={[]} lang='js' code={require('raw!../assets/snippets/builtin.example')} ranges={[
+                    <CodeSlide transition={[]} lang='js' code={snippets.builtin} ranges={[
                         { loc: [0, 1], title: 'Arrays contain types as well' },
                         { loc: [0, 2] },
                         { loc: [0, 3] },
@@ -128,7 +138,7 @@ export default class Presentation extends React.Component {
                             </Appear>
                         </List>
                     </Slide>
-                    <CodeSlide transition={[]} lang='js' code={require('raw!../assets/snippets/other.example')} ranges={[
+                    <CodeSlide transition={[]} lang='js' code={snippets.other} ranges={[
                         { loc: [0, 1], title: 'Key-value map' },
                         { loc: [0, 2] },
                         { loc: [0, 3] },
@@ -152,12 +162,12 @@ export default class Presentation extends React.Component {
                             <Heading size={4}>That is why aliases are so useful!</Heading>
                         </Appear>
                     </Slide>
-                    <CodeSlide transition={[]} lang='js' code={require('raw!../assets/snippets/aliases.example')} ranges={[
+                    <CodeSlide transition={[]} lang='js' code={snippets.aliases} ranges={[
                         { loc: [0, 1], title: 'Union of types' },
                         { loc: [2, 7], title: 'or other more specific types' },
                         { loc: [0, 9], title: 'Lets get crazy' },
                     ]}/>
-                    <CodeSlide transition={[]} lang='js' code={require('raw!../assets/snippets/functions.example')} ranges={[
+                    <CodeSlide transition={[]} lang='js' code={snippets.functions} ranges={[
                         { loc: [0, 2], title: 'Type everythaaing!' },
                     ]}/>
                     <Slide>
