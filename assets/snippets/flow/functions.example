@@ -1,0 +1,2 @@
+const createGreeting = (name: string)
+        : string => `hello ${name}!`;

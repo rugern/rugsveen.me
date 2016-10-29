@@ -1,15 +1,15 @@
 import React from 'react';
-import {Router, Link} from 'react-router';
+import { Router, Link } from 'react-router';
 
 const App = React.createClass({
     render() {
         return (
             <div>
-                <h1>Mitt navn er Christine</h1>
-                <Link to={'/test'}>Presentasjoner</Link>
+                <h1>Velkommen!</h1>
+                <Link to={'/campus'}>Presentasjoner</Link>
             </div>
         );
-    }
+    },
 });
 
 export default App;

@@ -1,0 +1,11 @@
+@font-face {
+    font-family: noyh;
+    font-weight: bold;
+    src: url(../assets/fonts/noyh_bold.otf);
+}
+
+@font-face {
+    font-family: planer;
+    font-weight: normal;
+    src: url(../assets/fonts/planer_regular.otf);
+}

@@ -5,7 +5,6 @@ const config = {
     entry: path.resolve('src/index.js'),
     output: {
         path: path.resolve('public/'),
-        publicPath: 'public/',
         filename: 'main.js',
     },
     module: {
@@ -20,7 +19,7 @@ const config = {
             },
             {
                 test: /\.md$/,
-                loader: "html-loader!markdown-loader?gfm=false"
+                loader: 'html-loader!markdown-loader?gfm=false',
             },
             {
                 test: /\.css$/,
