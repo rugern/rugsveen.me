@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Link } from 'react-router';
+import { Link } from 'react-router';
 
 const App = React.createClass({
     render() {
@@ -7,6 +7,7 @@ const App = React.createClass({
             <div>
                 <h1>Alle presentasjoner</h1>
                 <Link to={'/campus/flow'}>Flow</Link>
+                <Link to={'/campus/cfp'}>CfP</Link>
             </div>
         );
     },

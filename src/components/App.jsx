@@ -1,12 +1,14 @@
 import React from 'react';
-import { Router, Link } from 'react-router';
+import { Link } from 'react-router';
 
 const App = React.createClass({
     render() {
         return (
             <div>
-                <h1>Velkommen!</h1>
-                <Link to={'/campus'}>Presentasjoner</Link>
+                <ul>
+                    <li><Link to={'/'}>Hjem</Link></li>
+                    <li><Link to={'/campus'}>Presentasjoner</Link></li>
+                </ul>
             </div>
         );
     },

@@ -23,23 +23,25 @@ const config = {
             },
             {
                 test: /\.css$/,
-                loader: "style-loader!css-loader"
+                loader: 'style-loader!css-loader',
             },
             {
-                test: /\.(png|jpg|gif)$/,
-                loader: "url-loader?limit=8192"
-            },
-            {
-                test: /\.svg$/,
-                loader: "url?limit=10000&mimetype=image/svg+xml"
+                test: /\.png$/,
+                loader: 'url-loader?mimetype=image/png',
             },
         ],
+    },
+    resolve: {
+        extensions: ['', '.js', '.jsx', '.json', '.scss'],
     },
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
         }),
     ],
+    devServer: {
+        historyApiFallback: true,
+    },
 };
 
 export default config;
